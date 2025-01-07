@@ -11,10 +11,20 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
 export class CitasGestionPage implements OnInit {
+  citas: Cita[] = [];
 
-  constructor() { }
-
+  constructor(private citasService: CitasService) {}
+  
   ngOnInit() {
+    this.citas = this.citasService.getCitas();
   }
-
-}
+    
+    onAgregarCita(cita: Cita) {
+      this.citasService.agregarCita(cita.frase, cita.autor);
+      this.citas = this.citasService.getCitas();
+    }
+    onEliminarCita(cita: Cita) { 
+      this.citasService.eliminarCita(cita); 
+      this.citas = this.citasService.getCitas();
+    }
+}    

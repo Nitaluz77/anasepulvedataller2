@@ -1,3 +1,9 @@
-<p>
-  formulario works!
-</p>
+<ion-item>
+  <ion-label position="stacked">Mencion</ion-label>
+  <ion-input [(ngModel)]="mencion" placeholder="Ingrese una frase"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Autor</ion-label>
+  <ion-input [(ngModel)]="autor" placeholder="Ingrese el autor"></ion-input>
+</ion-item>
+<ion-button expand="block" (click)="agregarCita()">Agregar Cita</ion-button>

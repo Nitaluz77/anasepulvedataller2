@@ -10,11 +10,16 @@ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/stan
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class CitasConfigPage implements OnInit {
+export class CitaComponent implements OnInit {
+  cita: Cita;
 
-  constructor() { }
+  constructor(private citasService: CitasService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.mostrarNuevaCita();
   }
 
+  mostrarNuevaCita(): void {
+    this.cita = this.citasService.getCitaAleatoria();
+  }
 }

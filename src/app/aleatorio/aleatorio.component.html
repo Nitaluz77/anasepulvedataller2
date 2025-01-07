@@ -1,3 +1,10 @@
-<p>
-  aleatorio works!
-</p>
+<<ion-list>
+  <ion-item *ngFor="let cita of citas">
+    <ion-label>
+      <h2>{{ cita.mencion }}</h2>
+      <p>- {{ cita.autor }}</p>
+    </ion-label>
+    <ion-button (click)="onEliminarCita(cita)">Eliminar</ion-button>
+  </ion-item>
+</ion-list>
+

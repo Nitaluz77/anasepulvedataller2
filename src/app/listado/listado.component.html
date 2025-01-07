@@ -1,3 +1,11 @@
-<p>
-  listado works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Gestión de Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-formulario-citas (onAgregar)="onAgregarCita($event)"></app-formulario-citas>
+  <app-lista-de-citas [citas]="citas" (onEliminar)="onEliminarCita($event)"></app-lista-de-citas>
+</ion-content>
+
